@@ -42,12 +42,12 @@ def unmute_sounds():
     if check_if_muted()==True:
         mouse.click('left')
         mouse.move(-10000,-10000, absolute=False, duration=0.1)
-        mouse.move(999, 515, absolute=False,duration=0.1)
+        mouse.move(80, 800, absolute=False,duration=0.1)
         time.sleep(1)
         mouse.click('left')
     else:
         mouse.move(-10000, -10000, absolute=False, duration=0.1)
-        mouse.move(999, 515, absolute=False, duration=0.1)
+        mouse.move(80, 800, absolute=False, duration=0.1)
         mouse.click('left')
 
 
