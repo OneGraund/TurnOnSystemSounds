@@ -1,24 +1,16 @@
 import mouse
-from PIL import ImageGrab
 import time
 import pyautogui
 
 VOLUME_COORDS = (1708, 1601)
 OPENMIXER_COORDS = (1787, 940)
-MUTE_COORDS = (1627,981)
+MUTE_COORDS = (1620,983)
 
 def check_if_muted():
     """Can return either "CustomerReady" or "WhiteScreen\""""
     """Checking color of pixels"""
 
-    def getHex(rgb):
-        return '%02X%02X%02X' % rgb
-
-    bbox = (MUTE_COORDS[0], MUTE_COORDS[1], MUTE_COORDS[0] + 1, MUTE_COORDS[1] + 1)
-    im = ImageGrab.grab(bbox=bbox)
-    rgbim = im.convert('RGB')
-    r, g, b = rgbim.getpixel((0, 0))
-    print(f'COLOR: rgb{(r, g, b)} | HEX #{getHex((r, g, b))}')
+    r,g,b = pyautogui.pixel(MUTE_COORDS)
     if r>=237 and g<=20 and b<=20:
         return True
     else:
