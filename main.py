@@ -5,6 +5,7 @@ import pyautogui
 VOLUME_COORDS = (1708, 1601)
 OPENMIXER_COORDS = (1800, 970)
 MUTE_COORDS = (1620,983)
+IDLE_COORDS = (120,340)
 DELAY = 5
 
 def check_if_muted():
@@ -39,12 +40,12 @@ def unmute_sounds():
     if check_if_muted()==True:
         mouse.click('left')
         mouse.move(-10000,-10000, absolute=False, duration=0.1)
-        mouse.move(80, 800, absolute=False,duration=0.1)
+        mouse.move(IDLE_COORDS[0], IDLE_COORDS[1], absolute=False,duration=0.1)
         time.sleep(1)
         mouse.click('left')
     else:
         mouse.move(-10000, -10000, absolute=False, duration=0.1)
-        mouse.move(80, 800, absolute=False, duration=0.1)
+        mouse.move(IDLE_COORDS[0], IDLE_COORDS[1], absolute=False, duration=0.1)
         mouse.click('left')
 
 
