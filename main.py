@@ -3,14 +3,15 @@ import time
 import pyautogui
 
 VOLUME_COORDS = (1708, 1601)
-OPENMIXER_COORDS = (1787, 940)
+OPENMIXER_COORDS = (1787, 930)
 MUTE_COORDS = (1620,983)
+DELAY = 5
 
 def check_if_muted():
     """Can return either "CustomerReady" or "WhiteScreen\""""
     """Checking color of pixels"""
 
-    r,g,b = pyautogui.pixel(MUTE_COORDS)
+    r,g,b = pyautogui.pixel(MUTE_COORDS[0], MUTE_COORDS[1])
     if r>=237 and g<=20 and b<=20:
         return True
     else:
@@ -45,4 +46,4 @@ def unmute_sounds():
 
 while True:
     unmute_sounds()
-    time.sleep(60*5)
+    time.sleep(60*DELAY)
