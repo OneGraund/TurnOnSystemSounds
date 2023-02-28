@@ -12,7 +12,7 @@ def check_if_muted():
     """Checking color of pixels"""
 
     r,g,b = pyautogui.pixel(MUTE_COORDS[0], MUTE_COORDS[1])
-    if r>=237 and g<=20 and b<=20:
+    if r>=225 and g<=20 and b<=20:
         print('System sounds are muted')
         return True
     else:
