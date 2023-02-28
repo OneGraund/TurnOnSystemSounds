@@ -1,6 +1,7 @@
 import mouse
 import time
 import pyautogui
+import os
 
 VOLUME_COORDS = (1708, 1601)
 OPENMIXER_COORDS = (1800, 970)
@@ -51,4 +52,6 @@ def unmute_sounds():
 
 while True:
     unmute_sounds()
+    time.sleep(1)
+    os.system("taskkill /f /im sndvol.exe")
     time.sleep(60*DELAY)
